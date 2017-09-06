@@ -1175,6 +1175,7 @@ declare class RecordInstance<T: Object> {
   clear(): this & T;
 
   setIn(keyPath: Iterable<any>, value: any): this & T;
+  getIn<K: $Keys<T>>(searchKeyPath: Iterable<any>, notSetValue?: any): $ElementType<T, K>;	  
   updateIn(keyPath: Iterable<any>, updater: (value: any) => any): this & T;
   mergeIn(keyPath: Iterable<any>, ...collections: Array<any>): this & T;
   mergeDeepIn(keyPath: Iterable<any>, ...collections: Array<any>): this & T;
